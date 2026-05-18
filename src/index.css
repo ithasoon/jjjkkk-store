@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Tajawal", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* GLOBAL TEXT DIRECTION FIX */
+/* Removed */
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+html.dark {
+  /* Fast simple dark mode for the entire app */
+  filter: invert(1) hue-rotate(180deg);
+  background-color: #f8fafc; /* Inverts to dark slate */
+}
+
+/* Re-invert things that shouldn't be inverted like images, if any */
+html.dark img, 
+html.dark svg, 
+html.dark video {
+  filter: invert(1) hue-rotate(-180deg);
+}
